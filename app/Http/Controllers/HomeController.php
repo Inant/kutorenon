@@ -6,14 +6,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    private $param;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->param['icon'] = 'ni-tv-2 text-primary';
     }
 
     /**
@@ -23,6 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $this->param['pageInfo'] = 'Dashboard';
+        return view('pages.dashboard', $this->param);
     }
 }
