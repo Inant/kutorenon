@@ -20,9 +20,9 @@
   <link rel="stylesheet" href="{{ asset('backend/css/argon.css?v=1.2.0') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('backend/css/custom.css') }}" type="text/css">
 
-  <script src="{{ asset('backend/vendor/ckeditor5/ckeditor.js') }}"></script>
+  {{-- <script src="{{ asset('backend/vendor/ckeditor5/ckeditor.js') }}"></script> --}}
   {{-- <script src="{{ asset('backend/vendor/ckeditor5-document/ckeditor.js') }}"></script> --}}
-  {{-- <script src="{{ asset('backend/vendor/ckeditor/ckeditor.js') }}"></script> --}}
+  <script src="{{ asset('backend/vendor/ckeditor/ckeditor.js') }}"></script>
   
 </head>
 

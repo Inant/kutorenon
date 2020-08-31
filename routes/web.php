@@ -13,8 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// beranda
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.beranda.beranda');
+});
+
+// profil desa
+Route::group(['prefix' => 'profil-desa'], function () {
+    Route::get('sejarah-desa', function () {
+        return view('frontend.profil-desa.sejarah-desa');
+    });
+    Route::get('profil-desa', function () {
+        return view('frontend.profil-desa.profil-desa');
+    });
 });
 
 Auth::routes();
