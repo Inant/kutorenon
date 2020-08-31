@@ -23,12 +23,12 @@
                   @endif
               </div>
             </div>
-            <form action="{{ route('berita.update', $berita->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('pengumuman.update', $pengumuman->id) }}" method="post" enctype="multipart/form-data">
               @csrf
               @method('put')
               <div class="card-body">
-                  <label for="" class="form-control-label">Judul Berita</label>
-                  <input type="text" name="judul" value="{{old('judul', $berita->judul)}}" class="form-control @error('judul') is-invalid @enderror" placeholder="Judul">
+                  <label for="" class="form-control-label">Judul</label>
+                  <input type="text" name="judul" value="{{old('judul', $pengumuman->judul)}}" class="form-control @error('judul') is-invalid @enderror" placeholder="Judul">
                   @error('judul')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
                   <br>
                   
                   <label for="" class="form-control-label">Penulis</label>
-                  <input type="text" name="penulis" value="{{old('penulis', $berita->penulis)}}" class="form-control @error('penulis') is-invalid @enderror" placeholder="ex : Lebron James">
+                  <input type="text" name="penulis" value="{{old('penulis', $pengumuman->penulis)}}" class="form-control @error('penulis') is-invalid @enderror" placeholder="ex : Lebron James">
                   @error('penulis')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
                   
                   <label for="" class="form-control-label">Foto</label>
                   <br>
-                  <img src="{{ asset('backend/img/berita/'.$berita->foto) }}" alt="" width="500px">
+                  <img src="{{ asset('backend/img/pengumuman/'.$pengumuman->foto) }}" alt="" width="500px">
                   <br>
                   <span>
                       <i>*Abaikan jika tidak ingin mengubah foto</i>
@@ -61,7 +61,7 @@
                   <br>
 
                   <label for="" class="form-control-label">Ulasan Singkat</label>
-                  <textarea name="ulasan_singkat" id="editor2" rows="1" class="form-control @error('ulasan_singkat') is-invalid @enderror">{{old('ulasan_singkat', $berita->ulasan_singkat)}}</textarea>
+                  <textarea name="ulasan_singkat" id="editor2" rows="1" class="form-control @error('ulasan_singkat') is-invalid @enderror">{{old('ulasan_singkat', $pengumuman->ulasan_singkat)}}</textarea>
                   @error('ulasan_singkat')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                   <br>
 
                   <label for="" class="form-control-label">Konten</label>
-                  <textarea name="konten" id="editor" class="form-control @error('konten') is-invalid @enderror">{{old('konten', $berita->konten)}}</textarea>
+                  <textarea name="konten" id="editor" class="form-control @error('konten') is-invalid @enderror">{{old('konten', $pengumuman->konten)}}</textarea>
                   @error('konten')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>

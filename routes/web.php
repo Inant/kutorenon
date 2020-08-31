@@ -53,5 +53,11 @@ Route::group(['middleware' => ['auth']], function () {
 
         // berita
         Route::resource('berita', 'BeritaController');
+        
+        // pengumuman
+        Route::resource('pengumuman', 'PengumumanController');
+
+        // sambutan kades
+        Route::resource('sambutan-kades', 'SambutanKadesController');
     });
 });

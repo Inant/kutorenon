@@ -27,7 +27,7 @@
               @csrf
               <div class="card-body">
                   <label for="" class="form-control-label">Judul Berita</label>
-                  <input type="text" name="judul" value="{{old('judul')}}" class="form-control @error('judul') is-invalid @enderror" placeholder="ex : Jaya Mandiri">
+                  <input type="text" name="judul" value="{{old('judul')}}" class="form-control @error('judul') is-invalid @enderror" placeholder="Judul Berita">
                   @error('judul')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>

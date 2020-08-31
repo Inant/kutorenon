@@ -20,8 +20,9 @@
   <link rel="stylesheet" href="{{ asset('backend/css/argon.css?v=1.2.0') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('backend/css/custom.css') }}" type="text/css">
 
-  {{-- <script src="{{ asset('backend/vendor/ckeditor5/ckeditor.js') }}"></script> --}}
-  <script src="{{ asset('backend/vendor/ckeditor/ckeditor.js') }}"></script>
+  <script src="{{ asset('backend/vendor/ckeditor5/ckeditor.js') }}"></script>
+  {{-- <script src="{{ asset('backend/vendor/ckeditor5-document/ckeditor.js') }}"></script> --}}
+  {{-- <script src="{{ asset('backend/vendor/ckeditor/ckeditor.js') }}"></script> --}}
   
 </head>
 
@@ -122,6 +123,20 @@
               <a class="nav-link {{Request::segment(2) == 'berita' ? 'active' : ''}}" href="{{url('administrator/berita')}}">
                 <i class="ni ni-planet text-blue"></i>
                 <span class="nav-link-text">Berita</span>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(2) == 'pengumuman' ? 'active' : ''}}" href="{{url('administrator/pengumuman')}}">
+                <i class="ni ni-notification-70 text-dark"></i>
+                <span class="nav-link-text">Pengumuman</span>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(2) == 'sambutan-kades' ? 'active' : ''}}" href="{{url('administrator/sambutan-kades')}}">
+                <i class="ni ni-align-center text-orange"></i>
+                <span class="nav-link-text">Sambutan Kades</span>
               </a>
             </li>
 

@@ -1,18 +1,18 @@
 $(document).ready(function() {
-    // ClassicEditor
-    //     .create( document.querySelector( '#editor' ) )
-    //     .catch( error => {
-    //     console.error( error );
-    // } );
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+        console.error( error );
+    } );
 
-    // ClassicEditor
-    //     .create( document.querySelector( '#editor2' ) )
-    //     .catch( error => {
-    //     console.error( error );
-    // } );
+    ClassicEditor
+        .create( document.querySelector( '#editor2' ) )
+        .catch( error => {
+        console.error( error );
+    } );
 
-    CKEDITOR.replace( 'editor' );
-    CKEDITOR.replace( 'editor2' );
+    // CKEDITOR.replace( 'editor' );
+    // CKEDITOR.replace( 'editor2' );
 
     $(".datepicker").datepicker({
         format: "yyyy-mm-dd"
