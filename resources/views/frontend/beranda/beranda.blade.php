@@ -29,20 +29,20 @@
         <div class="carousel-item" style="background-image: url({{ asset('backend/img/balai-minak-koncar-malam-min.jpeg') }})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lebih Lanjut</a>
+              <h2 class="animate__animated animate__fadeInDown">Profil Desa Kutorenon</h2>
+              <p class="animate__animated animate__fadeInUp">{!!implode(' ', array_slice(explode(' ', \App\ProfilDesa::first()->profil), 0, 20))!!}...</p>
+              <a href="#blog" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lebih Lanjut</a>
             </div>
           </div>
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url({{ asset('frontend/assets/img/slide/slide-3.jpg') }})">
+        <div class="carousel-item" style="background-image: url({{ asset('backend/img/profil-desa/sejarah' . '/' . \App\Sejarah::first()->cover) }})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lebih Lanjut</a>
+              <h2 class="animate__animated animate__fadeInDown">Sejarah Desa Kutorenon</h2>
+              <p class="animate__animated animate__fadeInUp">{!!implode(' ', array_slice(explode(' ', \App\Sejarah::first()->sejarah), 0, 20))!!}...</p>
+              <a href="#blog" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lebih Lanjut</a>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">Sejarah Desa</a>
+                <a href="{{ url('profil-desa/sejarah-desa') }}">Sejarah Desa</a>
               </h2>
 
               <div class="entry-meta">
@@ -118,7 +118,7 @@
                   {!!implode(' ', array_slice(explode(' ', $sejarah->sejarah), 0, 20))!!} ...
                 </p>
                 <div class="read-more">
-                  <a href="blog-single.html">Lebih Lanjut</a>
+                  <a href="{{ url('profil-desa/sejarah-desa') }}">Lebih Lanjut</a>
                 </div>
               </div>
 
@@ -136,7 +136,7 @@
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">Profil Desa</a>
+                <a href="{{ url('profil-desa/profil-desa') }}">Profil Desa</a>
               </h2>
 
               <div class="entry-meta">
@@ -151,7 +151,7 @@
                   {!!implode(' ', array_slice(explode(' ', $profil->profil), 0, 50))!!}...
                 </p>
                 <div class="read-more">
-                  <a href="blog-single.html">Lebih Lanjut</a>
+                  <a href="{{ url('profil-desa/profil-desa') }}">Lebih Lanjut</a>
                 </div>
               </div>
 

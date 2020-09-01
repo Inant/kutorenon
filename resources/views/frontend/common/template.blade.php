@@ -51,23 +51,47 @@
 
         <ul>
           <li class="{{Request::segment(1) == '' ? 'active' : ''}}"> <a href="{{ url('/') }}">Beranda</a> </li>
+
           <li class="drop-down {{Request::segment(1) == 'profil-desa' ? 'active' : ''}}"><a href="#">Profil Desa</a>
             <ul>
               <li><a href="{{ url('profil-desa/sejarah-desa') }}">Sejarah Desa</a></li>
               <li><a href="{{ url('profil-desa/profil-desa') }}">Profil Desa</a></li>
             </ul>
           </li>
-          <li class="drop-down"><a href="#">Pemerintah Desa</a>
+
+          <li class="drop-down {{Request::segment(1) == 'pemerintahan-desa' ? 'active' : ''}}"><a href="#">Pemerintahan Desa</a>
             <ul>
-              <li><a href="{{ url('visi-misi') }}">Visi Misi</a></li>
-              <li><a href="{{ url('pemerintah-desa') }}">Pemerintah Desa</a></li>
-              <li><a href="{{ url('bpd') }}">Badan Permusyawaratan Desa</a></li>
+              <li><a href="{{ url('pemerintahan-desa/visi-misi') }}">Visi Misi</a></li>
+              <li><a href="{{ url('pemerintahan-desa/pemerintahan-desa') }}">Pemerintahan Desa</a></li>
+              <li><a href="{{ url('pemerintahan-desa/bpd') }}">Badan Permusyawaratan Desa</a></li>
             </ul>
           </li>
-          <li><a href="pricing.html">Lembaga Masyarakat</a></li>
-          <li><a href="blog.html">BUMDes</a></li>
-          <li><a href="contact.html">Berita</a></li>
-          <li><a href="contact.html">Pengumuman</a></li>
+
+          <li class="drop-down {{Request::segment(1) == 'lembaga-desa' ? 'active' : ''}}"><a href="#">Lembaga Desa</a>
+            <ul>
+              @php
+                  $lembaga = \App\LembagaDesa::get();
+              @endphp
+              @foreach ($lembaga as $item)
+                <li><a href="{{ url('lembaga-desa/'. $item->slug) }}">{{$item->nama}}</a></li>
+              @endforeach
+            </ul>
+          </li>
+          
+          <li class="drop-down {{Request::segment(1) == 'bumdes' ? 'active' : ''}}"><a href="#">BUMDes</a>
+            <ul>
+              @php
+                  $bumdes = \App\Bumdes::get();
+              @endphp
+              @foreach ($bumdes as $item)
+                <li><a href="{{ url('bumdes/'. $item->slug) }}">{{$item->nama}}</a></li>
+              @endforeach
+            </ul>
+          </li>
+          
+          <li class="{{Request::segment(1) == 'berita' ? 'active' : ''}}"><a href="{{ url('berita') }}">Berita</a></li>
+          <li class="{{Request::segment(1) == 'pengumuman' ? 'active' : ''}}"><a href="{{ url('pengumuman') }}">Pengumuman</a></li>
+          <li class="{{Request::segment(1) == 'pengaduan' ? 'active' : ''}}"><a href="{{ url('pengaduan') }}">Pengaduan</a></li>
 
         </ul>
 
@@ -110,19 +134,19 @@
             <h4>Lainnya</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/') }}">Beranda</a> </li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Profil Desa</a> </li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Pemerintah Desa</a> </li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Lembaga Masyarakat</a> </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{url('profil-desa/sejarah-desa')}}">Sejarah Desa</a> </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{url('profil-desa/profil-desa')}}">Profil Desa</a> </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('pemerintahan-desa/pemerintahan-desa') }}">Pemerintahan Desa</a> </li>
             </ul>
           </div>
-
+          
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Lihat Juga</h4>
+            <h4 style="color: transparent">Lihat Juga</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">BUMDes</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Berita</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Pengumuman</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Lainnya</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('lembaga-desa'. '/' . \App\LembagaDesa::first()->slug) }}">Lembaga Desa</a> </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('bumdes'. '/' . \App\Bumdes::first()->slug) }}">BUMDes</a> </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('berita') }}">Berita</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('pengumuman') }}">Pengumuman</a></li>
             </ul>
           </div>
 

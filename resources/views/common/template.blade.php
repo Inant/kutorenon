@@ -139,6 +139,13 @@
                 <span class="nav-link-text">Sambutan Kades</span>
               </a>
             </li>
+            
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(2) == 'pengaduan' ? 'active' : ''}}" href="{{url('administrator/pengaduan')}}">
+                <i class="ni ni-send text-grey"></i>
+                <span class="nav-link-text">Pengaduan</span>
+              </a>
+            </li>
 
           </ul>
           <!-- Divider -->
@@ -389,7 +396,7 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://limadigital.id/" class="font-weight-bold ml-1" target="_blank">Kutorenon Website By Lima Digital</a>
+              &copy; 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">Kutorenon Website</a>
             </div>
           </div>
 <!--           <div class="col-lg-6">

@@ -28,6 +28,39 @@ Route::group(['prefix' => 'profil-desa'], function () {
     });
 });
 
+// pemerintah desa
+Route::group(['prefix' => 'pemerintahan-desa'], function () {
+    Route::get('visi-misi', function () {
+        return view('frontend.pemerintahan-desa.visi-misi');
+    });
+    Route::get('pemerintahan-desa', function () {
+        return view('frontend.pemerintahan-desa.pemerintahan-desa');
+    });
+    Route::get('bpd', function () {
+        return view('frontend.pemerintahan-desa.bpd');
+    });
+});
+
+// lembaga desa
+Route::get('lembaga-desa/{slug}', 'FLembagaDesaController@index');
+
+// bumdes
+Route::get('bumdes/{slug}', 'FBumdesController@index');
+
+// berita
+Route::get('berita', 'FBeritaController@index');
+Route::get('berita/{slug}', 'FBeritaController@show');
+
+// pengumuman
+Route::get('pengumuman', 'FPengumumanController@index');
+Route::get('pengumuman/{slug}', 'FPengumumanController@show');
+
+// pengaduan
+Route::get('pengaduan', function () {
+    return view('frontend.pengaduan.pengaduan');
+});
+Route::post('submit-pengumuman', 'PengaduanController@store')->name('submit-pengaduan');
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -70,5 +103,9 @@ Route::group(['middleware' => ['auth']], function () {
 
         // sambutan kades
         Route::resource('sambutan-kades', 'SambutanKadesController');
+
+        // pengaduan
+        Route::get('pengaduan', 'PengaduanController@list');
+        Route::get('show-pengaduan/{id}', 'PengaduanController@show')->name('show-pengaduan');
     });
 });

@@ -23,7 +23,7 @@
       </div>
 
     </div>
-
+  </section>
   <!-- ======= Blog Section ======= -->
   <section id="blog" class="blog">
     <div class="container">
@@ -93,6 +93,20 @@
                 </div>
               @endforeach
             </div><!-- End sidebar recent posts-->
+            {{-- pengumuman --}}
+            @php
+              $pengumuman = \App\Pengumuman::orderBy('id', 'desc')->limit(4)->get();
+            @endphp
+            <h3 class="sidebar-title">Pengumuman</h3>
+            <div class="sidebar-item recent-posts">
+              @foreach ($pengumuman as $item)
+                <div class="post-item clearfix">
+                  <img src="{{ asset('backend/img/pengumuman'.'/'.$item->foto) }}" alt="">
+                  <h4><a href="{{ url('pengumuman'.'/'.$item->slug) }}">{{$item->judul}}</a></h4>
+                  <time>{{date('d-m-Y', strtotime($item->created_at))}}</time>
+                </div>
+              @endforeach
+            </div><!-- End pengumuman-->
 
           </div><!-- End sidebar -->
 

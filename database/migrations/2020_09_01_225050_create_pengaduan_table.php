@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePengaduanOnlineTable extends Migration
+class CreatePengaduanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreatePengaduanOnlineTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengaduan_online', function (Blueprint $table) {
-            $table->id();
+        Schema::create('pengaduan', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama', 50);
+            $table->string('email', 50);
+            $table->text('keluhan', 50);
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreatePengaduanOnlineTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengaduan_online');
+        Schema::dropIfExists('pengaduan');
     }
 }

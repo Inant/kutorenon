@@ -14,12 +14,12 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-2">Jumlah Tipe Kamar</h5>
-                  <span class="h2 font-weight-bold mb-1"> 4 </span>
+                  <h5 class="card-title text-uppercase text-muted mb-2">Jumlah User</h5>
+                  <span class="h2 font-weight-bold mb-1"> {{\App\User::count()}} </span>
                 </div>
                 <div class="col-auto mt-1">
                   <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                    <i class="ni ni-bullet-list-67"></i>
+                    <i class="ni ni-single-02"></i>
                   </div>
                 </div>
               </div>
@@ -36,12 +36,12 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-2">Jumlah Kamar</h5>
-                  <span class="h2 font-weight-bold mb-1"> 5 </span>
+                  <h5 class="card-title text-uppercase text-muted mb-2">Jumlah Berita</h5>
+                  <span class="h2 font-weight-bold mb-1"> {{\App\Berita::count()}} </span>
                 </div>
                 <div class="col-auto mt-1">
                   <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                    <i class="ni ni-box-2"></i>
+                    <i class="ni ni-planet"></i>
                   </div>
                 </div>
               </div>
@@ -58,16 +58,12 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-2">Reservasi</h5>
-                  @php
-                      $month = date('m');
-                      $year = date('Y');
-                  @endphp
-                  <span class="h2 font-weight-bold mb-1"> 9 </span>
+                  <h5 class="card-title text-uppercase text-muted mb-2">Jumlah Pengumuman</h5>
+                  <span class="h2 font-weight-bold mb-1"> {{\App\Pengumuman::count()}} </span>
                 </div>
                 <div class="col-auto mt-1">
                   <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                    <i class="ni ni-cart"></i>
+                    <i class="ni ni-notification-70"></i>
                   </div>
                 </div>
               </div>
@@ -84,16 +80,12 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-2">Reservasi</h5>
-                  @php
-                      $month = date('m');
-                      $year = date('Y');
-                  @endphp
-                  <span class="h2 font-weight-bold mb-1"> 9 </span>
+                  <h5 class="card-title text-uppercase text-muted mb-2">Jumlah Pengaduan</h5>
+                  <span class="h2 font-weight-bold mb-1"> {{\App\Pengaduan::count()}} </span>
                 </div>
                 <div class="col-auto mt-1">
-                  <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                    <i class="ni ni-cart"></i>
+                  <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                    <i class="ni ni-send"></i>
                   </div>
                 </div>
               </div>
