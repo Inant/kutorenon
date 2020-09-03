@@ -70,17 +70,14 @@
 
           <div class="sidebar">
 
-            {{-- <h3 class="sidebar-title">Baca Juga</h3> --}}
-            {{-- <div class="sidebar-item categories">
-              @php
-                  $otherBumdes = \App\Bumdes::where('slug', '<>' ,$berita->slug)->get();
-              @endphp
-              <ul>
-                @foreach ($otherBumdes as $item)
-                  <li><i class="bx bx-chevron-right"></i><a href="{{ url('bumdes' . '/' . $item->slug) }}">BUMDes {{$item->nama}}</a></li>
-                @endforeach
-              </ul>
-            </div><!-- End sidebar categories--> --}}
+            <h3 class="sidebar-title">Baca Juga</h3>
+              <div class="sidebar-item categories">
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i><a href="{{ url('susunan-redaksi') }}">Susunan Redaksi</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="{{ url('suara-redaksi') }}">Suara Redaksi</a></li>
+                </ul>
+              </div>
+            <!-- End sidebar categories-->
             @php
                 $berita = \App\Berita::where('slug', '!=', $berita->slug)->orderBy('id', 'desc')->limit(6)->get();
             @endphp

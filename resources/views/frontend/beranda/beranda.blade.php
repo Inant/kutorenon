@@ -181,13 +181,13 @@
                 </div>
 
                 <h2 class="entry-title">
-                  <a href="blog-single.html">{!!$item->judul!!}</a>
+                  <a href="{{ url('berita'. '/' . $item->slug, []) }}">{!!$item->judul!!}</a>
                 </h2>
 
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">{{$item->penulis}}</a></li>
-                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time>{{date('d-m-Y', strtotime($item->created_at))}}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="#">{{$item->penulis}}</a></li>
+                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="#"><time>{{date('d-m-Y', strtotime($item->created_at))}}</time></a></li>
                   </ul>
                 </div>
 
@@ -196,7 +196,7 @@
                     {!! $item->ulasan_singkat !!}
                   </p>
                   <div class="read-more">
-                    <a href="blog-single.html">Lebih Lanjut</a>
+                    <a href="{{ url('berita'. '/' . $item->slug, []) }}">Lebih Lanjut</a>
                   </div>
                 </div>
 

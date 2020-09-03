@@ -15,9 +15,9 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Profil Desa</h2>
+        {{-- <h2>Profil Desa</h2> --}}
         <ol>
-          <li><a href="#">Profil Desa</a></li>
+          <li><a href="#">Profil</a></li>
           <li>Profil Desa</li>
         </ol>
       </div>

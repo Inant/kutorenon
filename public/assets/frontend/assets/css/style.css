@@ -557,7 +557,7 @@ section {
 .section-title p {
   margin: 0;
   margin: 0;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
@@ -581,8 +581,8 @@ section {
 }
 
 .breadcrumbs h2 {
-  font-size: 32px;
-  font-weight: 300;
+  font-size: 24px;
+  font-weight: 280;
   margin: 0;
 }
 
@@ -1471,7 +1471,7 @@ section {
 }
 
 .blog .entry .entry-title {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 26px;
   font-weight: bold;
   padding: 0;
@@ -1652,8 +1652,8 @@ section {
 }
 
 .blog .entry-single .entry-title {
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .blog .blog-author {

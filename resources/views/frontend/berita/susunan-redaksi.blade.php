@@ -74,14 +74,14 @@
 
           <div class="sidebar">
 
-            {{-- <h3 class="sidebar-title">Baca Juga</h3>
+            <h3 class="sidebar-title">Baca Juga</h3>
             <div class="sidebar-item categories">
               <ul>
-                <li><i class="bx bx-chevron-right"></i><a href="{{ url('pemerintahan-desa/pemerintahan-desa') }}">Pemerintahan</a></li>
-                <li><i class="bx bx-chevron-right"></i><a href="{{ url('pemerintahan-desa/bpd') }}">Badan Permusyawaratan</a></li>
+                <li><i class="bx bx-chevron-right"></i><a href="{{ url('berita') }}">Semua Berita</a></li>
+                <li><i class="bx bx-chevron-right"></i><a href="{{ url('suara-redaksi') }}">Suara Redaksi</a></li>
               </ul>
 
-            </div> --}}
+            </div>
             <!-- End sidebar categories-->
             @php
                 $berita = \App\Berita::orderBy('id', 'desc')->limit(6)->get();
