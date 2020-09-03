@@ -58,8 +58,8 @@ class PengumumanController extends Controller
         if($request->file('foto')){
             $foto = $request->file('foto');
             $pathUpload = 'public/assets/backend/img/pengumuman';
-            $foto->move($pathUpload,time().".".$foto->getClientOriginalName());
             $namaFoto = time().".".$foto->getClientOriginalName();
+            $foto->move($pathUpload, $namaFoto);
             $newPengumuman->foto = $namaFoto;
         }
         $newPengumuman->ulasan_singkat = $request->get('ulasan_singkat');

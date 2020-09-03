@@ -55,8 +55,8 @@ class LembagaDesaController extends Controller
         if($request->file('foto')){
             $foto = $request->file('foto');
             $pathUpload = 'public/assets/backend/img/lembaga-desa';
-            $foto->move($pathUpload,time().".".$foto->getClientOriginalName());
             $namaFoto = time().".".$foto->getClientOriginalName();
+            $foto->move($pathUpload, $namaFoto);
             $newLembaga->foto = $namaFoto;
         }
         $newLembaga->konten = $request->get('konten');
@@ -90,8 +90,8 @@ class LembagaDesaController extends Controller
         if($request->file('foto')){
             $foto = $request->file('foto');
             $pathUpload = 'public/assets/backend/img/lembaga-desa';
-            $foto->move($pathUpload,time().".".$foto->getClientOriginalName());
             $namaFoto = time().".".$foto->getClientOriginalName();
+            $foto->move($pathUpload, $namaFoto);
             $lembagaDesa->foto = $namaFoto;
         }
         $lembagaDesa->konten = $request->get('konten');

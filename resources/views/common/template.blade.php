@@ -118,7 +118,21 @@
                 <span class="nav-link-text">BUMDes</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(2) == 'sususan-redaksi' ? 'active' : ''}}" href="{{url('administrator/susunan-redaksi')}}">
+                <i class="ni ni-archive-2 text-primary"></i>
+                <span class="nav-link-text">Susunan Redaksi</span>
+              </a>
+            </li>
             
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(2) == 'suara-redaksi' ? 'active' : ''}}" href="{{url('administrator/suara-redaksi')}}">
+                <i class="ni ni-chat-round text-success"></i>
+                <span class="nav-link-text">Suara Redaksi</span>
+              </a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link {{Request::segment(2) == 'berita' ? 'active' : ''}}" href="{{url('administrator/berita')}}">
                 <i class="ni ni-planet text-blue"></i>

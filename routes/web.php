@@ -50,6 +50,11 @@ Route::get('bumdes/{slug}', 'FBumdesController@index');
 // berita
 Route::get('berita', 'FBeritaController@index');
 Route::get('berita/{slug}', 'FBeritaController@show');
+Route::get('susunan-redaksi', function () {
+    return view('frontend.berita.susunan-redaksi');
+});
+Route::get('suara-redaksi', 'FSuaraRedaksiController@index');
+Route::get('suara-redaksi/{slug}', 'FSuaraRedaksiController@show');
 
 // pengumuman
 Route::get('pengumuman', 'FPengumumanController@index');
@@ -97,6 +102,12 @@ Route::group(['middleware' => ['auth']], function () {
 
         // berita
         Route::resource('berita', 'BeritaController');
+
+        // susunan redaksi
+        Route::resource('susunan-redaksi', 'SusunanRedaksiController');
+        
+        // suara redaksi
+        Route::resource('suara-redaksi', 'SuaraRedaksiController');
         
         // pengumuman
         Route::resource('pengumuman', 'PengumumanController');

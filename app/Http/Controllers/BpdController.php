@@ -30,8 +30,8 @@ class BpdController extends Controller
         if($request->file('cover')){
             $cover = $request->file('cover');
             $pathUpload = 'public/assets/backend/img/pemerintah-desa/bpd';
-            $cover->move($pathUpload,time().".".$cover->getClientOriginalName());
             $namaCover = time().".".$cover->getClientOriginalName();
+            $cover->move($pathUpload, $namaCover);
             $bpd->cover = $namaCover;
         }
         $bpd->konten = $request->get('konten');

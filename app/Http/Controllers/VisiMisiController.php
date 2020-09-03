@@ -30,8 +30,8 @@ class VisiMisiController extends Controller
         if($request->file('cover')){
             $cover = $request->file('cover');
             $pathUpload = 'public/assets/backend/img/pemerintah-desa/visi-misi';
-            $cover->move($pathUpload,time().".".$cover->getClientOriginalName());
             $namaCover = time().".".$cover->getClientOriginalName();
+            $cover->move($pathUpload, $namaCover);
             $visiMisi->cover = $namaCover;
         }
         $visiMisi->visi_misi = $request->get('visi_misi');

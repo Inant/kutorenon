@@ -30,8 +30,8 @@ class ProfilDesaController extends Controller
         if($request->file('cover')){
             $cover = $request->file('cover');
             $pathUpload = 'public/assets/backend/img/profil-desa/profil';
-            $cover->move($pathUpload,time().".".$cover->getClientOriginalName());
             $namaCover = time().".".$cover->getClientOriginalName();
+            $cover->move($pathUpload, $namaCover);
             $profil->cover = $namaCover;
         }
         $profil->profil = $request->get('profil');

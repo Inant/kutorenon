@@ -30,8 +30,8 @@ class PemerintahDesaController extends Controller
         if($request->file('cover')){
             $cover = $request->file('cover');
             $pathUpload = 'public/assets/backend/img/pemerintah-desa/pemerintah-desa';
-            $cover->move($pathUpload,time().".".$cover->getClientOriginalName());
             $namaCover = time().".".$cover->getClientOriginalName();
+            $cover->move($pathUpload, $namaCover);
             $pemerintahDesa->cover = $namaCover;
         }
         $pemerintahDesa->konten = $request->get('konten');

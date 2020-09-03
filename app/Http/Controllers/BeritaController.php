@@ -58,8 +58,8 @@ class BeritaController extends Controller
         if($request->file('foto')){
             $foto = $request->file('foto');
             $pathUpload = 'public/assets/backend/img/berita';
-            $foto->move($pathUpload,time().".".$foto->getClientOriginalName());
             $namaFoto = time().".".$foto->getClientOriginalName();
+            $foto->move($pathUpload, $namaFoto);
             $newBerita->foto = $namaFoto;
         }
         $newBerita->ulasan_singkat = $request->get('ulasan_singkat');
@@ -97,8 +97,8 @@ class BeritaController extends Controller
         if($request->file('foto')){
             $foto = $request->file('foto');
             $pathUpload = 'public/assets/backend/img/berita';
-            $foto->move($pathUpload,time().".".$foto->getClientOriginalName());
             $namaFoto = time().".".$foto->getClientOriginalName();
+            $foto->move($pathUpload, $namaFoto);
             $berita->foto = $namaFoto;
         }
         $berita->ulasan_singkat = $request->get('ulasan_singkat');

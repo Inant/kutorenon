@@ -30,8 +30,8 @@ class SejarahController extends Controller
         if($request->file('cover')){
             $cover = $request->file('cover');
             $pathUpload = 'public/assets/backend/img/profil-desa/sejarah';
-            $cover->move($pathUpload,time().".".$cover->getClientOriginalName());
             $namaCover = time().".".$cover->getClientOriginalName();
+            $cover->move($pathUpload, $namaCover);
             $sejarah->cover = $namaCover;
         }
         $sejarah->sejarah = $request->get('sejarah');

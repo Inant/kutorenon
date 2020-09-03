@@ -57,8 +57,8 @@ class BumdesController extends Controller
         if($request->file('foto')){
             $foto = $request->file('foto');
             $pathUpload = 'public/assets/backend/img/bumdes';
-            $foto->move($pathUpload,time().".".$foto->getClientOriginalName());
             $namaFoto = time().".".$foto->getClientOriginalName();
+            $foto->move($pathUpload, $namaFoto);
             $newBumdes->foto = $namaFoto;
         }
         $newBumdes->konten = $request->get('konten');
@@ -94,8 +94,8 @@ class BumdesController extends Controller
         if($request->file('foto')){
             $foto = $request->file('foto');
             $pathUpload = 'public/assets/backend/img/bumdes';
-            $foto->move($pathUpload,time().".".$foto->getClientOriginalName());
             $namaFoto = time().".".$foto->getClientOriginalName();
+            $foto->move($pathUpload, $namaFoto);
             $bumdes->foto = $namaFoto;
         }
         $bumdes->konten = $request->get('konten');

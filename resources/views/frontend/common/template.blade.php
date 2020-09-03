@@ -88,8 +88,15 @@
               @endforeach
             </ul>
           </li>
-          
-          <li class="{{Request::segment(1) == 'berita' ? 'active' : ''}}"><a href="{{ url('berita') }}">Berita</a></li>
+
+          <li class="drop-down {{Request::segment(1) == 'berita' || Request::segment(1) == 'susunan-redaksi' || Request::segment(1) == 'suara-redaksi' ? 'active' : ''}}"><a href="#">Berita</a>
+            <ul>
+              <li><a href="{{ url('berita') }}">Berita</a></li>
+              <li><a href="{{ url('susunan-redaksi') }}">Susunan Redaksi</a></li>
+              <li><a href="{{ url('suara-redaksi') }}">Suara Redaksi</a></li>
+            </ul>
+          </li>
+
           <li class="{{Request::segment(1) == 'pengumuman' ? 'active' : ''}}"><a href="{{ url('pengumuman') }}">Pengumuman</a></li>
           <li class="{{Request::segment(1) == 'pengaduan' ? 'active' : ''}}"><a href="{{ url('pengaduan') }}">Pengaduan</a></li>
 
